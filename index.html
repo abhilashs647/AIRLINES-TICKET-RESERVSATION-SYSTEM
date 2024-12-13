@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyPlane Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: deepskyblue;
+            color: maroon;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: skyblue;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+        nav a {
+            color: blueviolet;
+            padding: 18px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: slateblue;
+            color: black;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: lightblue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .login-signup-buttons {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .login-signup-buttons a {
+            color: blueviolet;
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: skyblue;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .login-signup-buttons a:hover {
+            background-color: steelblue;
+        }
+
+        /* Flexbox Layout for each section */
+        .section-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .section-text {
+            width: 48%;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .section-button {
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .section-button a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: lightskyblue;
+            color: blueviolet;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+        }
+        .section-button a:hover {
+            background-color: #ffcc00;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Image Styling for Circular Background */
+        .home-image, .about-image {
+            width: 500px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+        }
+
+        /* Special positioning for circular images */
+        .home-section .section-image {
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-section .section-image {
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FlyPlane Airlines</h1>
+    <div class="login-signup-buttons">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#flights">Flight Details</a>
+    <a href="#booking">Booking</a>
+    <a href="#cancel">Cancel</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <h1>WELCOME TO FLYPLANE AIRLINES</h1>
+        <div class="section-content">
+            <div class="section-text">
+                <p>Welcome aboard FlyPlane Airlines! We take pride in being a leading global airline, offering exceptional flight services that prioritize your comfort, safety, and overall experience. With an extensive network of destinations, FlyPlane ensures convenient travel options for both business and leisure travelers. Our fleet is equipped with modern amenities, including spacious cabins, state-of-the-art entertainment systems, and the latest technology for smooth and safe flights. We believe in providing our passengers with more than just a journey – we aim to make every trip a memorable experience.</p>
+                <p>Our highly-trained team of flight attendants and ground staff are always ready to assist you, ensuring a seamless check-in process, efficient boarding, and top-notch service throughout the flight. We understand that air travel can be stressful, which is why we go the extra mile to make your journey as comfortable and stress-free as possible. FlyPlane Airlines offers a range of in-flight services, including delicious meals, entertainment options, and Wi-Fi connectivity, so you can stay connected even at 30,000 feet. Book with us today and let FlyPlane Airlines take you to your next destination with ease and style!</p>
+            </div>
+            <div class="section-image">
+                <img src="flight1.jpg" alt="FlyPlane Airlines" class="home-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="home-section">
+        <h1>ABOUT US</h1>
+        <div class="section-content">
+            <div class="section-image">
+                <img src="flight3.jpeg" alt="FlyPlane Airlines Team" class="about-image">
+            </div>
+            <div class="section-text">
+                <p>FlyPlane Airlines was founded with the vision of providing safe, affordable, and high-quality air travel to passengers across the globe. With more than two decades of experience in the aviation industry, we have grown to become a trusted airline that is recognized for its commitment to excellence. Our mission is to make air travel more accessible and enjoyable for everyone, no matter the distance or destination.</p>
+                <p>We believe in innovation and constantly strive to enhance our services, from improving flight schedules to introducing new technology for a better in-flight experience. Our sustainability initiatives are also a core part of our operations, as we continue to invest in greener technologies to reduce our carbon footprint and contribute to a more sustainable future. FlyPlane Airlines offers a range of services that cater to every type of traveler, from economy class to first-class cabins, all with the same commitment to quality and service.</p>
+                <p>Our partnerships with other global airlines and frequent flyer programs ensure that your travel experience is seamless, no matter where you're going. Whether it's for business, pleasure, or a special occasion, FlyPlane Airlines is your trusted travel companion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Details Section -->
+    <section id="flights" class="home-section">
+        <h1>FLIGHT DETAILS</h1>
+        <div class="section-content">
+            <div class="section-text">
+                <p>Discover our destinations, check flight schedules, and plan your next trip with FlyPlane Airlines. These flights offer comfort and convenience, with prices depending on the destination and class. Passengers enjoy spacious seating, quality in-flight meals, and entertainment. Premium options provide extra legroom and priority boarding, ensuring a restful journey for travelers seeking both comfort and value.</p>
+            </div>
+            <div class="section-button">
+                <a href="flightdetails.html">View Flight Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="home-section">
+        <h1>BOOK YOUR FLIGHTS</h1>
+        <div class="section-content">
+            <div class="section-text">
+                <p>"Book Your Flights" is a guide that simplifies the process of booking flights, offering tips on finding the best deals, choosing the right airlines, and navigating booking platforms. It provides insights into timing, flexibility, and how to avoid common mistakes, making air travel more efficient and affordable. Ready to fly? Book your ticket with FlyPlane Airlines today and enjoy a seamless travel experience!</p>
+            </div>
+            <div class="section-button">
+                <a href="book.html">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancel Section -->
+    <section id="cancel" class="home-section">
+        <h1>CANCEL YOUR BOOKING</h1>
+        <div class="section-content">
+            <div class="section-text">
+                <p>"Cancel Your Flight" offers practical advice for managing flight cancellations. It covers how to cancel bookings, navigate airline policies, and secure refunds or credits. The book also explains strategies for minimizing cancellation fees, understanding travel insurance, and dealing with unexpected disruptions, ensuring travelers handle changes smoothly and effectively. If you need to cancel your flight, follow our easy process to manage your booking efficiently.</p>
+            </div>
+            <div class="section-button">
+                <a href="cancel.html">Cancel Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="home-section">
+        <h1>CONTACT US </h1>
+        <p>Have questions? Get in touch with our customer support team for assistance.</p>
+        <p>Email us at: <a href="mailto:support@flyplane.com">support@flyplane.com</a></p><br><br>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 FlyPlane Airlines. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

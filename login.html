@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FlyPlane Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: deepskyblue;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: deepskyblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: skyblue;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .signup-link a {
+            text-decoration: none;
+            color: deepskyblue;
+        }
+        .signup-link a:hover {
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FlyPlane Airlines - Login</h1>
+</header>
+
+<main>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="dashboard.html" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 FlyPlane Airlines. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

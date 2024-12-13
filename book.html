@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - FlyPlane Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: deepskyblue;
+            color:maroon ;
+            text-align: center;
+            padding: 20px;
+            font-size: 30px; /* Same size as the home page header */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: skyblue;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: blueviolet;
+            padding: 18px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color:slateblue;
+            color: black;
+            transform: scale(1.1);
+        }
+        .booking-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .booking-container h2 {
+            text-align: center;
+            font-size: 28px; /* Heading size adjusted to match the previous page */
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            font-size: 16px; /* Consistent label size */
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group input[type="date"] {
+            padding: 10px;
+        }
+        .passenger-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .passenger-group label {
+            font-weight: normal;
+        }
+        .passenger-group input {
+            width: 48%;
+            margin-right: 2%;
+        }
+        .remove-passenger-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .remove-passenger-btn:hover {
+            background-color: #ff0000;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .payment-method {
+            background-color: #f1f1f1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            width: 100px;
+        }
+        .payment-method img {
+            width: 50px;
+            height: 50px;
+        }
+        .submit-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 15px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #ff9900;
+        }
+        footer {
+            background-color: lightblue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Flight Booking - FlyPlane Airlines</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="flightdetails.html">Flight Details</a>
+    <a href="booking.html">Booking</a>
+    <a href="cancel.html">Cancel</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="booking-container">
+    <h2>Book Your Flight</h2>
+    
+    <form id="booking-form">
+        <!-- Flight Selection -->
+        <div class="form-group">
+            <label for="flight">Select a Flight</label>
+            <select id="flight" name="flight" required>
+                <option value="Air India 101">Air India 101 (Delhi to Mumbai) - ₹5000</option>
+                <option value="GoAir 202">GoAir 202 (Mumbai to Bengaluru) - ₹4000</option>
+                <option value="IndiGo 303">IndiGo 303 (Chennai to Kolkata) - ₹4500</option>
+                <option value="SpiceJet 404">SpiceJet 404 (Hyderabad to Jaipur) - ₹3500</option>
+                <option value="Vistara 505">Vistara 505 (Bengaluru to Goa) - ₹5500</option>
+                <option value="Air India 606">Air India 606 (Delhi to Pune) - ₹3000</option>
+            </select>
+        </div>
+
+        <!-- Date of Travel -->
+        <div class="form-group">
+            <label for="date">Date of Travel</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <!-- Amount for the Flight -->
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount" disabled>
+        </div>
+
+        <!-- Passengers Information -->
+        <div id="passenger-container">
+            <div class="passenger-group">
+                <h3>Passenger 1</h3>
+                <label for="name1">Name</label>
+                <input type="text" id="name1" name="passenger1_name" placeholder="Enter full name" required>
+                <label for="age1">Age</label>
+                <input type="number" id="age1" name="passenger1_age" placeholder="Enter age" required>
+                <button type="button" class="remove-passenger-btn" onclick="removePassenger(1)">Remove</button>
+            </div>
+        </div>
+        <button type="button" onclick="addPassenger()">Add Another Passenger</button>
+
+        <!-- Payment Method Selection -->
+        <div class="payment-methods">
+            <div class="payment-method">
+                <img src="debit card.jpeg" alt="Debit Card">
+                <p>Debit Card</p>
+            </div>
+            <div class="payment-method">
+                <img src="Netbank.png" alt="Net Banking">
+                <p>Net Banking</p>
+            </div>
+            <div class="payment-method">
+                <img src="phonepe.png" alt="PhonePe">
+                <p>PhonePe</p>
+            </div>
+            <div class="payment-method">
+                <img src="googlepay.jpeg" alt="Google Pay">
+                <p>Google Pay</p>
+            </div>
+            <div class="payment-method">
+                <img src="paytm.png" alt="Paytm">
+                <p>Paytm</p>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-button">Book Now</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 FlyPlane Airlines. All rights reserved.</p>
+</footer>
+
+<script>
+    // Function to dynamically add more passengers
+    let passengerCount = 1;
+
+    function addPassenger() {
+        passengerCount++;
+        const passengerContainer = document.getElementById('passenger-container');
+        const newPassenger = document.createElement('div');
+        newPassenger.classList.add('passenger-group');
+        newPassenger.innerHTML = `
+            <h3>Passenger ${passengerCount}</h3>
+            <label for="name${passengerCount}">Name</label>
+            <input type="text" id="name${passengerCount}" name="passenger${passengerCount}_name" placeholder="Enter full name" required>
+            <label for="age${passengerCount}">Age</label>
+            <input type="number" id="age${passengerCount}" name="passenger${passengerCount}_age" placeholder="Enter age" required>
+            <button type="button" class="remove-passenger-btn" onclick="removePassenger(${passengerCount})">Remove</button>
+        `;
+        passengerContainer.appendChild(newPassenger);
+    }
+
+    // Function to remove a passenger
+    function removePassenger(id) {
+        const passengerToRemove = document.getElementById(`passenger-container`).querySelectorAll('.passenger-group')[id - 1];
+        passengerToRemove.remove();
+        passengerCount--;
+    }
+
+    // Update the amount when a flight is selected
+    document.getElementById('flight').addEventListener('change', function () {
+        const flight = this.value;
+        let amount = 0;
+        if (flight === "Air India 101") amount = 5000;
+        else if (flight === "GoAir 202") amount = 4000;
+        else if (flight === "IndiGo 303") amount = 4500;
+        else if (flight === "SpiceJet 404") amount = 3500;
+        else if (flight === "Vistara 505") amount = 5500;
+        else if (flight === "Air India 606") amount = 3000;
+
+        document.getElementById('amount').value = '₹' + amount;
+    });
+</script>
+
+</body>
+</html>
